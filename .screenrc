@@ -1,0 +1,18 @@
+# turn off welcome message
+startup_message off
+
+# disable visual bell
+vbell off
+
+# set scrollback buffer
+defscrollback 10000000
+
+# don't save vim output in scroll bar
+altscreen on
+
+# enable scrolling
+termcapinfo xterm* ti@:te@
+
+# customized screen status line
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
