@@ -18,3 +18,7 @@ print_info () {
 most_used_cmd () {
 	history | awk '{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}' | sort -n -r | head -$1
 }
+
+function largest_files () {
+	du -h -x -s -- * | sort -r -h | head -20;
+}
