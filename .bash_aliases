@@ -7,4 +7,9 @@ do
 done
 
 # neovim as defaut cscope editor
-export CSCOPE_EDITOR=nvim
+if command -v nvim &> /dev/null
+then
+	export CSCOPE_EDITOR=nvim
+else
+	echo ""
+fi
