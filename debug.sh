@@ -3,13 +3,17 @@
 source /home/$(whoami)/scripts/enum.sh
 
 enum __log_level { LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR }
+enum __log_commands { PRINT_CMD_IN_LOG, NO_CMD_IN_LOG }
 
 log_string=( "DEBUG" "INFO" "WARNING" "ERROR" )
 
-log_level=$LOG_ERROR
+log_level=$LOG_INFO
+cmd_logging=$PRINT_CMD_IN_LOG
 
 function execute () {
-	echo EXECUTE "$@"
+	if [ $cmd_logging -eq $PRINT_CMD_IN_LOG ]; then
+		echo "+" "$@"
+	fi
 	$@
 }
 
